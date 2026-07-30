@@ -1,13 +1,13 @@
 # MOE Laravel MultiTenant
 
-Multi-tenancy for Laravel — `BelongsToTenant` trait, `TenantScope`, middleware, and tenant context.
+Multi-tenancy untuk Laravel — trait `BelongsToTenant`, `TenantScope`, middleware, dan konteks tenant.
 
-## Requirements
+## Persyaratan
 
 - PHP `^8.2`
 - Laravel `^11 | ^12 | ^13`
 
-## Installation
+## Instalasi
 
 ```bash
 composer require moe/laravel-multi-tenant
@@ -15,16 +15,16 @@ php artisan vendor:publish --provider="MOE\\MultiTenant\\MultiTenantServiceProvi
 php artisan migrate
 ```
 
-## Quick Start
+## Mulai Cepat
 
-### 1. Create your Tenant model
+### 1. Buat model Tenant
 
 ```php
 use MOE\MultiTenant\Models\Tenant as BaseTenant;
 
 class Tenant extends BaseTenant
 {
-    // Add your own relationships or methods
+    // Tambahkan relasi atau method sendiri
 }
 ```
 
@@ -34,21 +34,21 @@ Update `config/moe-multitenant.php`:
 'tenant_model' => 'App\\Models\\Tenant',
 ```
 
-### 2. Apply to models
+### 2. Terapkan ke model
 
 ```php
 use MOE\MultiTenant\Traits\BelongsToTenant;
 
-class Matter extends Model
+class Perkara extends Model
 {
     use BelongsToTenant;
 
-    // Queries are automatically scoped to the current tenant
-    // tenant_id is auto-filled on creation
+    // Query otomatis discope ke tenant saat ini
+    // tenant_id otomatis terisi saat create
 }
 ```
 
-### 3. Register middleware
+### 3. Daftarkan middleware
 
 ```php
 // bootstrap/app.php
@@ -61,7 +61,7 @@ use MOE\MultiTenant\Middleware\ResolveTenant;
 })
 ```
 
-### 4. Protect routes
+### 4. Lindungi route
 
 ```php
 Route::middleware(['auth', 'tenant'])->group(function () {
@@ -72,33 +72,33 @@ Route::middleware(['auth', 'tenant'])->group(function () {
 });
 ```
 
-### 5. Set tenant header (API mode)
+### 5. Header tenant (mode API)
 
 ```http
-GET /api/v1/matters HTTP/1.1
-X-Tenant: my-office-slug
+GET /api/v1/perkara HTTP/1.1
+X-Tenant: kantor-abc-slug
 ```
 
-## Usage
+## Penggunaan
 
-### Tenant Context
+### Konteks Tenant
 
 ```php
 use MOE\MultiTenant\Facades\Tenant;
 
-// Get current tenant
+// Ambil tenant saat ini
 $tenant = Tenant::current();
 $tenantId = Tenant::id();
 
-// Check if tenant context is active
+// Cek apakah konteks tenant aktif
 if (Tenant::has()) {
     // ...
 }
 
-// Set manually (e.g., from command)
+// Set manual (misal dari command)
 Tenant::set($tenant);
 
-// Clear
+// Hapus
 Tenant::clear();
 ```
 
@@ -122,17 +122,17 @@ $service->switchContext($id);
 ### Query Scopes
 
 ```php
-// Scoped to current tenant (automatic)
-$matters = Matter::all();
+// Otomatis discope ke tenant saat ini
+$perkara = Perkara::all();
 
-// Query specific tenant
-$matters = Matter::byTenant($tenantId)->get();
+// Query untuk tenant tertentu
+$perkara = Perkara::byTenant($tenantId)->get();
 
-// Bypass tenant scope (super admin)
-$allMatters = Matter::allTenants()->get();
+// Bypass scope tenant (super admin)
+$semuaPerkara = Perkara::allTenants()->get();
 ```
 
-## Configuration
+## Konfigurasi
 
 ```php
 // config/moe-multitenant.php
@@ -141,19 +141,19 @@ return [
     'tenant_column' => 'tenant_id',
     'detection_mode' => env('TENANT_DETECTION_MODE', 'header'),
 
-    // Header mode
+    // Mode header
     'header_name' => env('TENANT_HEADER', 'X-Tenant'),
 
-    // Subdomain mode
+    // Mode subdomain
     'subdomain_column' => 'slug',
 
-    // Path mode
+    // Mode path
     'path_segment' => 1,
 
     // Super admin bypass
     'super_admin_flag' => 'is_super_admin',
 
-    // Caching
+    // Cache
     'caching' => [
         'enabled' => true,
         'ttl_seconds' => 3600,
@@ -167,6 +167,6 @@ return [
 composer test
 ```
 
-## License
+## Lisensi
 
 MIT © MOE (MindOfEmanizer)
