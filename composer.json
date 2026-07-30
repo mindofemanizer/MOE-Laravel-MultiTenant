@@ -1,0 +1,64 @@
+{
+    "name": "moe/laravel-multi-tenant",
+    "description": "Multi-tenancy for Laravel — BelongsToTenant trait, TenantScope, middleware, tenant context.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "MindOfEmanizer",
+            "homepage": "https://github.com/mindofemanizer"
+        }
+    ],
+    "keywords": [
+        "laravel",
+        "multi-tenant",
+        "saas",
+        "tenant",
+        "multitenancy",
+        "belongstotenant",
+        "tenantscope",
+        "moe"
+    ],
+    "require": {
+        "php": "^8.2",
+        "illuminate/support": "^11.0|^12.0|^13.0",
+        "illuminate/database": "^11.0|^12.0|^13.0",
+        "illuminate/console": "^11.0|^12.0|^13.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^9.0|^10.0",
+        "pestphp/pest": "^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "MOE\\MultiTenant\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "MOE\\MultiTenant\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "MOE\\MultiTenant\\MultiTenantServiceProvider"
+            ],
+            "aliases": {
+                "Tenant": "MOE\\MultiTenant\\Facades\\Tenant"
+            }
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/pest",
+        "test-coverage": "vendor/bin/pest --coverage"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
