@@ -3,9 +3,6 @@
 use Moe\MultiTenant\Contracts\TenantContextInterface;
 use Moe\MultiTenant\Facades\Tenant;
 use Moe\MultiTenant\Models\Tenant as TenantModel;
-use Moe\MultiTenant\Tests\TestCase;
-
-uses(TestCase::class);
 
 beforeEach(function () {
     $this->context = app(TenantContextInterface::class);
