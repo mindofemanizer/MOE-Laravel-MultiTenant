@@ -1,4 +1,4 @@
-﻿{
+{
     "name":  "moe/laravel-multi-tenant",
     "description":  "Multi-tenancy for Laravel â€” BelongsToTenant trait, TenantScope, middleware, tenant context.",
     "type":  "library",
