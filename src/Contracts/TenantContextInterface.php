@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace MOE\MultiTenant\Contracts;
+namespace Moe\MultiTenant\Contracts;
 
 use Illuminate\Database\Eloquent\Model;
 

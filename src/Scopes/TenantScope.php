@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace MOE\MultiTenant\Scopes;
+namespace Moe\MultiTenant\Scopes;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Scope;
-use MOE\MultiTenant\Facades\Tenant;
+use Moe\MultiTenant\Facades\Tenant;
 
 class TenantScope implements Scope
 {

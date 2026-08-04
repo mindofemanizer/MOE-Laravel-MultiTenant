@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace MOE\MultiTenant\Traits;
+namespace Moe\MultiTenant\Traits;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use MOE\MultiTenant\Facades\Tenant;
-use MOE\MultiTenant\Models\Tenant as TenantModel;
-use MOE\MultiTenant\Scopes\TenantScope;
+use Moe\MultiTenant\Facades\Tenant;
+use Moe\MultiTenant\Models\Tenant as TenantModel;
+use Moe\MultiTenant\Scopes\TenantScope;
 
 trait BelongsToTenant
 {

@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace MOE\MultiTenant\Services;
+namespace Moe\MultiTenant\Services;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
-use MOE\MultiTenant\Exceptions\TenantNotFoundException;
-use MOE\MultiTenant\Models\Tenant;
+use Moe\MultiTenant\Exceptions\TenantNotFoundException;
+use Moe\MultiTenant\Models\Tenant;
 
 class TenantService
 {

@@ -11,7 +11,7 @@ Multi-tenancy untuk Laravel — trait `BelongsToTenant`, `TenantScope`, middlewa
 
 ```bash
 composer require moe/laravel-multi-tenant
-php artisan vendor:publish --provider="MOE\\MultiTenant\\MultiTenantServiceProvider" --tag="moe-multitenant-config"
+php artisan vendor:publish --provider="Moe\\MultiTenant\\MultiTenantServiceProvider" --tag="moe-multitenant-config"
 php artisan migrate
 ```
 
@@ -20,7 +20,7 @@ php artisan migrate
 ### 1. Buat model Tenant
 
 ```php
-use MOE\MultiTenant\Models\Tenant as BaseTenant;
+use Moe\MultiTenant\Models\Tenant as BaseTenant;
 
 class Tenant extends BaseTenant
 {
@@ -37,7 +37,7 @@ Update `config/moe-multitenant.php`:
 ### 2. Terapkan ke model
 
 ```php
-use MOE\MultiTenant\Traits\BelongsToTenant;
+use Moe\MultiTenant\Traits\BelongsToTenant;
 
 class Perkara extends Model
 {
@@ -52,7 +52,7 @@ class Perkara extends Model
 
 ```php
 // bootstrap/app.php
-use MOE\MultiTenant\Middleware\ResolveTenant;
+use Moe\MultiTenant\Middleware\ResolveTenant;
 
 ->withMiddleware(function (Middleware $middleware) {
     $middleware->alias([
@@ -84,7 +84,7 @@ X-Tenant: kantor-abc-slug
 ### Konteks Tenant
 
 ```php
-use MOE\MultiTenant\Facades\Tenant;
+use Moe\MultiTenant\Facades\Tenant;
 
 // Ambil tenant saat ini
 $tenant = Tenant::current();
@@ -105,7 +105,7 @@ Tenant::clear();
 ### Tenant Service
 
 ```php
-use MOE\MultiTenant\Services\TenantService;
+use Moe\MultiTenant\Services\TenantService;
 
 $service = app(TenantService::class);
 

@@ -31,21 +31,21 @@
     },
     "autoload": {
         "psr-4": {
-            "MOE\\MultiTenant\\": "src/"
+            "Moe\\MultiTenant\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "MOE\\MultiTenant\\Tests\\": "tests/"
+            "Moe\\MultiTenant\\Tests\\": "tests/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "MOE\\MultiTenant\\MultiTenantServiceProvider"
+                "Moe\\MultiTenant\\MultiTenantServiceProvider"
             ],
             "aliases": {
-                "Tenant": "MOE\\MultiTenant\\Facades\\Tenant"
+                "Tenant": "Moe\\MultiTenant\\Facades\\Tenant"
             }
         }
     },

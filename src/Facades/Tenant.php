@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace MOE\MultiTenant\Facades;
+namespace Moe\MultiTenant\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Facade;
  * @method static string|null id()
  * @method static void clear()
  *
- * @see \MOE\MultiTenant\Contracts\TenantContextInterface
+ * @see \Moe\MultiTenant\Contracts\TenantContextInterface
  */
 class Tenant extends Facade
 {

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace MOE\MultiTenant\Exceptions;
+namespace Moe\MultiTenant\Exceptions;
 
 use Exception;
 

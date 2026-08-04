@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace MOE\MultiTenant\Services;
+namespace Moe\MultiTenant\Services;
 
 use Illuminate\Database\Eloquent\Model;
-use MOE\MultiTenant\Contracts\TenantContextInterface;
+use Moe\MultiTenant\Contracts\TenantContextInterface;
 
 class TenantContext implements TenantContextInterface
 {

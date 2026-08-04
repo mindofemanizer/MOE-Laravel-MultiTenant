@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace MOE\MultiTenant\Middleware;
+namespace Moe\MultiTenant\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
-use MOE\MultiTenant\Contracts\TenantContextInterface;
-use MOE\MultiTenant\Exceptions\TenantInactiveException;
-use MOE\MultiTenant\Exceptions\TenantNotFoundException;
+use Moe\MultiTenant\Contracts\TenantContextInterface;
+use Moe\MultiTenant\Exceptions\TenantInactiveException;
+use Moe\MultiTenant\Exceptions\TenantNotFoundException;
 
 class ResolveTenant
 {
@@ -112,7 +112,7 @@ class ResolveTenant
 
     protected function getTenantModel()
     {
-        $modelClass = config('moe-multitenant.tenant_model', \MOE\MultiTenant\Models\Tenant::class);
+        $modelClass = config('moe-multitenant.tenant_model', \Moe\MultiTenant\Models\Tenant::class);
 
         return new $modelClass;
     }

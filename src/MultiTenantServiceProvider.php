@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace MOE\MultiTenant;
+namespace Moe\MultiTenant;
 
 use Illuminate\Support\ServiceProvider;
-use MOE\MultiTenant\Contracts\TenantContextInterface;
-use MOE\MultiTenant\Services\TenantContext;
+use Moe\MultiTenant\Contracts\TenantContextInterface;
+use Moe\MultiTenant\Services\TenantContext;
 
 class MultiTenantServiceProvider extends ServiceProvider
 {

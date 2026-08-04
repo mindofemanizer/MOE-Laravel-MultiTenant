@@ -1,9 +1,9 @@
 <?php
 
-use MOE\MultiTenant\Contracts\TenantContextInterface;
-use MOE\MultiTenant\Facades\Tenant;
-use MOE\MultiTenant\Models\Tenant as TenantModel;
-use MOE\MultiTenant\Tests\TestCase;
+use Moe\MultiTenant\Contracts\TenantContextInterface;
+use Moe\MultiTenant\Facades\Tenant;
+use Moe\MultiTenant\Models\Tenant as TenantModel;
+use Moe\MultiTenant\Tests\TestCase;
 
 uses(TestCase::class);
 

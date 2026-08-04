@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-use MOE\MultiTenant\Facades\Tenant;
-use MOE\MultiTenant\Models\Tenant as TenantModel;
-use MOE\MultiTenant\Tests\TestCase;
+use Moe\MultiTenant\Facades\Tenant;
+use Moe\MultiTenant\Models\Tenant as TenantModel;
+use Moe\MultiTenant\Tests\TestCase;
 
 uses(TestCase::class);
 
