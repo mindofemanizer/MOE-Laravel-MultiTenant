@@ -1,6 +1,6 @@
-# MOE Laravel MultiTenant
+﻿# MOE Laravel MultiTenant
 
-Multi-tenancy untuk Laravel — trait `BelongsToTenant`, `TenantScope`, middleware, dan konteks tenant.
+Multi-tenancy untuk Laravel â€” trait `BelongsToTenant`, `TenantScope`, middleware, dan konteks tenant.
 
 ## Persyaratan
 
@@ -10,7 +10,7 @@ Multi-tenancy untuk Laravel — trait `BelongsToTenant`, `TenantScope`, middlewa
 ## Instalasi
 
 ```bash
-composer require moe/laravel-multi-tenant
+composer require moe/laravel-multi-tenant:dev-main
 php artisan vendor:publish --provider="Moe\\MultiTenant\\MultiTenantServiceProvider" --tag="moe-multitenant-config"
 php artisan migrate
 ```
@@ -169,4 +169,4 @@ composer test
 
 ## Lisensi
 
-MIT © MOE (MindOfEmanizer)
+MIT Â© MOE (MindOfEmanizer)
